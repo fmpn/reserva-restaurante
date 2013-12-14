@@ -1,0 +1,29 @@
+<h1>Listing contacta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpfcliente</th>
+      <th>Cnpjrestaurante</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacta.each do |contactum| %>
+      <tr>
+        <td><%= contactum.cpfCliente %></td>
+        <td><%= contactum.cnpjRestaurante %></td>
+        <td><%= link_to 'Show', contactum %></td>
+        <td><%= link_to 'Edit', edit_contactum_path(contactum) %></td>
+        <td><%= link_to 'Destroy', contactum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contactum', new_contactum_path %>

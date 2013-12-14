@@ -1,0 +1,25 @@
+<%= form_for(@contactum) do |f| %>
+  <% if @contactum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contactum.errors.count, "error") %> prohibited this contactum from being saved:</h2>
+
+      <ul>
+      <% @contactum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cpfCliente %><br>
+    <%= f.text_field :cpfCliente %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpjRestaurante %><br>
+    <%= f.text_field :cnpjRestaurante %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
